@@ -28,11 +28,4 @@ def eval_unpack(p, a, c, k, e, d):
         c -= 1
         d[e(c)] = k[c] or e(c)
 
-    def k(e):
-        key = e.group()
-        try:
-            return d[key]
-        except :
-            return key
-
-    return re.sub("\w+", k, p)
+    return re.sub("\w+", lambda e: d.get(e.group()) or e.group(), p)
