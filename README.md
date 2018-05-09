@@ -27,4 +27,13 @@ print(raw_code)
 var i_say="f**k you Idiot!";console.log(i_say);
 ```
 
+## 更新
+現在可以自動的解包了，但是請自行注意一些代碼安全問題。
+```python
+from eval_unpack import unpack
+demo_eval = """eval(function(p,a,c,k,e,r){e=String;if(!''.replace(/^/,String)){while(c--)r[c]=k[c]||c;k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('1 0="2**3 4 5!";6.7(0);',8,8,'i_say|var|f|k|you|Idiot|console|log'.split('|'),0,{}))"""
+# 輸出解包后的JS代碼
+print (unpack(demo_eval))
+```
+
 结束。
