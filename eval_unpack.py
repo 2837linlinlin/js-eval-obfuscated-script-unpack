@@ -16,6 +16,7 @@ def base10_2_n_string(d, n):
 
 
 def eval_unpack(p, a, c, k, e, d):
+    a = c if not isinstance(a, int) else a
     def e(c):
         c = int(c)
         if c < a:
